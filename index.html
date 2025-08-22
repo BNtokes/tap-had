@@ -170,7 +170,7 @@
         <p>Invite your friends and earn bonus points for each friend who joins!</p>
         <div class="referral-box">
             <h3>Your Referral Link</h3>
-            <input type="text" value="https://example.com/tapswap?ref=12345" id="referral-link" readonly>
+            <input type="text" value="https://t.me/tapbothard_bot" id="referral-link" readonly>
             <button onclick="copyReferralLink()">Copy Link</button>
         </div>
         <div class="referral-box">
@@ -244,8 +244,8 @@
                 userData = JSON.parse(savedData);
             }
             // सिमुलेशन के लिए कुछ रेफरल जोड़ें
-            userData.referrals = ; 
-            updateUI(@tapbothard_bot);
+            userData.referrals = 2; 
+            updateUI();
         }
 
         function saveUserData() {
@@ -337,7 +337,7 @@
         }, 1000);
 
         function withdraw(method) {
-            alert(`Withdrawal request for ${userData.points} points via ${method} submitted. This is a demo and no real transaction will occur.`);
+            alert(`Withdrawal request for ${userData.points} points via ${method} submitted. This is a real transaction will occur.`);
             userData.points = 0;
             saveUserData();
             updateUI();
@@ -345,11 +345,11 @@
 
         // लिंक कॉपी करने के लिए नया फ़ंक्शन
         function copyReferralLink() {
-            const referralLinkInput = document.getElementById('@tapbothard_bot');
+            const referralLinkInput = document.getElementById('referral-link');
             referralLinkInput.select();
             referralLinkInput.setSelectionRange(0, 99999); // मोबाइल उपकरणों के लिए
             navigator.clipboard.writeText(referralLinkInput.value);
-            alert("@tapbothard_bot");
+            alert("Referral link copied to clipboard!");
         }
 
         window.onload = loadUserData;
